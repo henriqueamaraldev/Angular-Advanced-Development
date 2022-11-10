@@ -14,8 +14,18 @@ export class CadastroComponent implements OnInit {
   ngOnInit() {
 
     this.cadastroForm = new FormGroup({
-      nome: new FormControl('')
+      name: new FormControl(''),
+      document: new FormControl(''),
+      email: new FormControl(''),
+      password: new FormControl(''),
+      retypePassword: new FormControl(''),
     })
   }
+
+  addUser() {
+    let x = this.cadastroForm.value;
+    console.log(x)
+  }
+
 
 }
