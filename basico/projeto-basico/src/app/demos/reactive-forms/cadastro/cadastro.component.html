@@ -1,7 +1,7 @@
 <div class="'container main-container">
     <h4>Demo Cadastro</h4>
     <hr />
-    <form novalidate (ngSubmit)="addUser()" [formGroup]="cadastroForm">
+    <form novalidate (ngSubmit)="addUser()" [formGroup]="signUpForm">
         <div class="form-horizontal">
 
             <div class="form-group">
@@ -39,8 +39,8 @@
             <div class="form-group">
                 <label for="nome" class="col-md-2 control-label">Confirm password</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="retypePassword"
-                        placeholder="Retype password (requerido)" formControlName="retypePassword">
+                    <input type="text" class="form-control" id="passwordConfirmation"
+                        placeholder="Retype password (requerido)" formControlName="passwordConfirmation">
                 </div>
             </div>
 
