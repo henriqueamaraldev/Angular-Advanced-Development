@@ -130,7 +130,6 @@ export class AppComponent implements OnInit {
     console.log(texto)
   }
 
-
 }
 
 export default class User {
