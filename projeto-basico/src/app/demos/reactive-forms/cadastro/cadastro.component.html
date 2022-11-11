@@ -8,15 +8,28 @@
                 <label for="nome" class="col-md-2 control-label">Nome Completo</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="name" placeholder="Name (required)"
-                        formControlName="name">
+                        formControlName="name"
+                        [ngClass]="{'is-invalid': signUpForm.get('name').errors && (signUpForm.get('name').dirty || signUpForm.get('name').touched)}">
+
+                    <span
+                        *ngIf="signUpForm.get('name').errors && (signUpForm.get('name').dirty || signUpForm.get('name').touched)"
+                        class="text-danger">
+                        Insert name
+                    </span>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="nome" class="col-md-2 control-label">Document</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="name" placeholder="Document (required)"
+                    <input type="text" class="form-control" id="document" placeholder="Document (required)"
                         formControlName="document">
+
+                    <span
+                        *ngIf="signUpForm.get('document').errors && (signUpForm.get('document').dirty || signUpForm.get('document').touched)"
+                        class="text-danger">
+                        Insert document
+                    </span>
                 </div>
             </div>
 
@@ -47,6 +60,15 @@
             <div class="form-group">
                 <div class="col-md-4 col-md-offset-2">
                     <span> <button class="btn btn-success" id="Register" type="submit">Register</button></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-2">
+                    <p>Formulário válido: {{signUpForm.valid}}</p>
+                    <p>Formulário tocado: {{signUpForm.touched}}</p>
+                    <p>Formulário sujo: {{signUpForm.dirty}}</p>
+                    <p>Formulário: {{formResult}}</p>
                 </div>
             </div>
         </div>
