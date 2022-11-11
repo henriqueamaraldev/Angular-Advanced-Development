@@ -21,8 +21,8 @@ export class CadastroComponent implements OnInit {
       name: ['', [Validators.required]],
       document: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
       email: ['', [Validators.required, Validators.email]],
-      password: [''],
-      passwordConfirmation: [''],
+      password: ['', [Validators.required]],
+      passwordConfirmation: ['', [Validators.required]],
     })
   }
 
@@ -38,5 +38,8 @@ export class CadastroComponent implements OnInit {
 
   }
 
+  invalidFormField(field: string): boolean {
+    return this.signUpForm.get(field).errors && (this.signUpForm.get(field).dirty || this.signUpForm.get(field).touched)
+  }
 
 }

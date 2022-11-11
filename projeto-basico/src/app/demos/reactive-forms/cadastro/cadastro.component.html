@@ -8,13 +8,10 @@
                 <label for="nome" class="col-md-2 control-label">Nome Completo</label>
                 <div class="col-md-10">
                     <input type="text" class="form-control" id="name" placeholder="Name (required)"
-                        formControlName="name"
-                        [ngClass]="{'is-invalid': signUpForm.get('name').errors && (signUpForm.get('name').dirty || signUpForm.get('name').touched)}">
+                        formControlName="name" [ngClass]="{'is-invalid': invalidFormField('name')}">
 
-                    <span
-                        *ngIf="signUpForm.get('name').errors && (signUpForm.get('name').dirty || signUpForm.get('name').touched)"
-                        class="text-danger">
-                        Insert name
+                    <span *ngIf="invalidFormField('name')" class="text-danger">
+                        Insert name!
                     </span>
                 </div>
             </div>
@@ -22,13 +19,11 @@
             <div class="form-group">
                 <label for="nome" class="col-md-2 control-label">Document</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="document" placeholder="Document (required)"
-                        formControlName="document">
+                    <input type="text" [ngClass]="{'is-invalid': invalidFormField('document')}" class="form-control"
+                        id="document" placeholder="Document (required)" formControlName="document">
 
-                    <span
-                        *ngIf="signUpForm.get('document').errors && (signUpForm.get('document').dirty || signUpForm.get('document').touched)"
-                        class="text-danger">
-                        Insert document
+                    <span *ngIf="invalidFormField('document')" class="text-danger">
+                        Insert document!
                     </span>
                 </div>
             </div>
@@ -36,24 +31,38 @@
             <div class="form-group">
                 <label for="nome" class="col-md-2 control-label">Email</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="email" placeholder="Email (required)"
-                        formControlName="email">
+                    <input type="text" [ngClass]="{'is-invalid': invalidFormField('email')}" class="form-control"
+                        id="email" placeholder="Email (required)" formControlName="email">
+
+                    <span *ngIf="invalidFormField('email')" class="text-danger">
+                        Insert email!
+                    </span>
                 </div>
+
             </div>
 
             <div class="form-group">
                 <label for="nome" class="col-md-2 control-label">Password</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="password" placeholder="Password (required)"
-                        formControlName="password">
+                    <input type="text" [ngClass]="{'is-invalid': invalidFormField('password')}" class="form-control"
+                        id="password" placeholder="Password (required)" formControlName="password">
+
+                    <span *ngIf="invalidFormField('password')" class="text-danger">
+                        Insert password!
+                    </span>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="nome" class="col-md-2 control-label">Confirm password</label>
                 <div class="col-md-10">
-                    <input type="text" class="form-control" id="passwordConfirmation"
-                        placeholder="Retype password (requerido)" formControlName="passwordConfirmation">
+                    <input type="text" [ngClass]="{'is-invalid': invalidFormField('passwordConfirmation')}" class="
+                        form-control" id="passwordConfirmation" placeholder="Retype password (requerido)"
+                        formControlName="passwordConfirmation">
+
+                    <span *ngIf="invalidFormField('passwordConfirmation')" class="text-danger">
+                        Retype password!
+                    </span>
                 </div>
             </div>
 
