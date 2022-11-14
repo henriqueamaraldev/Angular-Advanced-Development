@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgBrazilValidators } from 'ng-brazil';
 import { User } from './models/user';
 
 @Component({
@@ -19,7 +20,7 @@ export class CadastroComponent implements OnInit {
 
     this.signUpForm = this.formBuilder.group({
       name: ['', [Validators.required]],
-      document: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+      document: ['', [Validators.required, NgBrazilValidators.cpf]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
       passwordConfirmation: ['', [Validators.required]],
